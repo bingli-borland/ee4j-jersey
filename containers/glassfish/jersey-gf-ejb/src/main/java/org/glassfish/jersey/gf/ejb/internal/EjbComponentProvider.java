@@ -56,11 +56,11 @@ import org.glassfish.jersey.server.model.Invocable;
 import org.glassfish.jersey.server.spi.ComponentProvider;
 import org.glassfish.jersey.server.spi.internal.ResourceMethodInvocationHandlerProvider;
 
-import org.glassfish.ejb.deployment.descriptor.EjbBundleDescriptorImpl;
-import org.glassfish.ejb.deployment.descriptor.EjbDescriptor;
-import org.glassfish.internal.data.ApplicationInfo;
-import org.glassfish.internal.data.ApplicationRegistry;
-import org.glassfish.internal.data.ModuleInfo;
+import com.astra.enterprise.ejb.deployment.descriptor.EjbBundleDescriptorImpl;
+import com.astra.enterprise.ejb.deployment.descriptor.EjbDescriptor;
+import com.astra.enterprise.internal.data.ApplicationInfo;
+import com.astra.enterprise.internal.data.ApplicationRegistry;
+import com.astra.enterprise.internal.data.ModuleInfo;
 
 import com.sun.ejb.containers.BaseContainer;
 import com.sun.ejb.containers.EjbContainerUtil;
@@ -207,7 +207,7 @@ public final class EjbComponentProvider implements ComponentProvider, ResourceMe
                 }
             }
             libNames.addAll(tempLibNames);
-            final Object interceptorBinder = initialContext.lookup("java:org.glassfish.ejb.container.interceptor_binding_spi");
+            final Object interceptorBinder = initialContext.lookup("java:com.astra.enterprise.ejb.container.interceptor_binding_spi");
             // Some implementations of InitialContext return null instead of
             // throwing NamingException if there is no Object associated with
             // the name
